@@ -1,0 +1,63 @@
+import java.util.*;
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+        Scanner con = new Scanner(System.in);
+        int t = con.nextInt();
+        
+        for(int i=1;i<=t;i++)
+        {
+            long total_matchstick=0;
+            String st = con.next();
+            int m=0;
+            int k=0;
+            for(;k<st.length();k++)
+            {
+            char n = st.charAt(k);
+            switch(n)
+            {
+
+                case '1': m=2;
+                break;
+                
+                case '2':
+                case '3':
+                case '5':m=5;
+                break;
+
+                case '4':m=4;
+                break;
+
+                case '6':
+                case '0':
+                case '9': m=6;
+                break;
+
+                case '7': m=3;
+                break;
+
+                case '8': m=7;
+            }
+            total_matchstick = total_matchstick+m;
+            
+            } 
+            long s;
+            String segment;
+            if(total_matchstick%2==0)
+            {
+                segment="";   
+            }
+            else
+            {
+                segment="7";
+                total_matchstick = total_matchstick-3;
+            }
+               s = total_matchstick/2;
+               for(int j=1;j<=s;j++)
+               {
+                   segment = segment+"1";
+               }
+               System.out.println(segment);
+            
+        }
+    }
+}
